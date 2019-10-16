@@ -339,5 +339,5 @@ def player_with_longest_name
     end
   end
   b = []
-  empty_array.max { |a, b| a.length <=> b.length }
+  return empty_array.max { |a, b| a.length <=> b.length }
 end
