@@ -343,6 +343,7 @@ end
 
 def long_name_steals_a_ton?
   rebound_array = []
+  player_array = []
   player_with_longest_name
   game_hash[:home][:players].each do |value_1|
     value_1.each do |key, value_2|
@@ -358,5 +359,19 @@ def long_name_steals_a_ton?
       end
     end
   end
-  rebound_array
+  game_hash[:home][:players].each do |value_1|
+    value_1.each do |key, value_2|
+      if key == :rebounds
+        if value_2 == rebound_array.max
+          player_array << value_1
+      end
+    end
+  end
+  game_hash[:away][:players].each do |value_1|
+    value_1.each do |key, value_2|
+      if key == :rebounds
+        rebound_array << value_2
+      end
+    end
+  end
 end
