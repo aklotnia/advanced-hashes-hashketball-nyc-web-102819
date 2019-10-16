@@ -322,4 +322,40 @@ def winning_team
 end
 
 def player_with_longest_name
-  
+  empty_array = []
+  shoe_size = []
+  game_hash[:home][:players].each do |value_1|
+    value_1.each do |key, value_2|
+      if key == :player_name
+        shoe_size << value_2
+      end
+    end
+  end
+  game_hash[:away][:players].each do |value_1|
+    value_1.each do |key, value_2|
+      if key == :points
+        shoe_size << value_2
+      end
+    end
+  end  
+  game_hash[:home][:players].each do |value_1|
+    value_1.each do |key, value_2|
+      if key == :points
+        if shoe_size.max == value_2
+          empty_array << value_1
+          break
+        end
+      end
+    end
+  end
+  game_hash[:away][:players].each do |value_1|
+    value_1.each do |key, value_2|
+      if key == :points
+        if shoe_size.max == value_2
+          empty_array << value_1
+          break
+        end
+      end
+    end
+  end
+  empty_array[0][:player_name]
