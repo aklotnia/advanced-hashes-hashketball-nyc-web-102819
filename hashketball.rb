@@ -383,4 +383,5 @@ def long_name_steals_a_ton?
     return TRUE
   else
     return FALSE
+  end
 end
