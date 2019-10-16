@@ -338,6 +338,8 @@ def player_with_longest_name
       end
     end
   end
+  b = []
+  empty_array.each {|item| b << item}
   empty_array.map do |item|
     
   end
