@@ -337,5 +337,5 @@ def player_with_longest_name
       end
     end
   end
-  shoe_size.max_by(&:length)
+  shoe_size.max { |a, b| a.length <=> b.length }
 end
