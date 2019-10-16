@@ -322,7 +322,6 @@ def winning_team
 end
 
 def player_with_longest_name
-  empty_array = []
   shoe_size = []
   game_hash[:home][:players].each do |value_1|
     value_1.each do |key, value_2|
@@ -338,6 +337,5 @@ def player_with_longest_name
       end
     end
   end
-  b = []
   shoe_size.max_by(&:length)
 end
