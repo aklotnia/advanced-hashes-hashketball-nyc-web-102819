@@ -364,13 +364,16 @@ def long_name_steals_a_ton?
       if key == :rebounds
         if value_2 == rebound_array.max
           player_array << value_1
+        end
       end
     end
   end
   game_hash[:away][:players].each do |value_1|
     value_1.each do |key, value_2|
       if key == :rebounds
-        rebound_array << value_2
+        if value_2 == rebound_array.max
+          player_array << value_1 
+        end
       end
     end
   end
