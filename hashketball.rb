@@ -333,29 +333,13 @@ def player_with_longest_name
   end
   game_hash[:away][:players].each do |value_1|
     value_1.each do |key, value_2|
-      if key == :points
+      if key == :player_name
         shoe_size << value_2
       end
     end
-  end  
-  game_hash[:home][:players].each do |value_1|
-    value_1.each do |key, value_2|
-      if key == :points
-        if shoe_size.max == value_2
-          empty_array << value_1
-          break
-        end
-      end
-    end
   end
-  game_hash[:away][:players].each do |value_1|
-    value_1.each do |key, value_2|
-      if key == :points
-        if shoe_size.max == value_2
-          empty_array << value_1
-          break
-        end
-      end
-    end
+  empty_array.map do |item|
+    
   end
   empty_array[0][:player_name]
+end
