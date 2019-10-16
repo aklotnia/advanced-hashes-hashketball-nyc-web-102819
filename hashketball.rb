@@ -344,7 +344,22 @@ end
 def long_name_steals_a_ton?
   rebound_array = []
   player_array = []
-  player_with_longest_name
+  shoe_size = []
+  game_hash[:home][:players].each do |value_1|
+    value_1.each do |key, value_2|
+      if key == :player_name
+        shoe_size << value_2
+      end
+    end
+  end
+  game_hash[:away][:players].each do |value_1|
+    value_1.each do |key, value_2|
+      if key == :player_name
+        shoe_size << value_2
+      end
+    end
+  end
+  longest_player_name = shoe_size.max { |a, b| a.length <=> b.length }
   game_hash[:home][:players].each do |value_1|
     value_1.each do |key, value_2|
       if key == :rebounds
