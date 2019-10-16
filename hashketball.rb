@@ -339,5 +339,5 @@ def player_with_longest_name
     end
   end
   b = []
-  empty_array.max_by(&:length)
+  shoe_size.max_by(&:length)
 end
