@@ -364,6 +364,7 @@ def long_name_steals_a_ton?
       if key == :rebounds
         if value_2 == rebound_array.max
           player_array << value_1
+          break
         end
       end
     end
@@ -373,8 +374,13 @@ def long_name_steals_a_ton?
       if key == :rebounds
         if value_2 == rebound_array.max
           player_array << value_1 
+          break
         end
       end
     end
   end
+  if longest_player_name == player_array[0][:player_name]
+    return TRUE
+  else
+    return FALSE
 end
